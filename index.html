@@ -14,6 +14,75 @@
 </head>
 
 <body>
+    <!-- Toast Containers -->
+    <div class="toast-container top-right">
+        <div class="toast" id="basicToast">
+            <div class="toast-header">
+                <strong>Notification</strong>
+                <small>just now</small>
+                <button class="toast-close" onclick="hideToast('basicToast')">&times;</button>
+            </div>
+            <div class="toast-body">
+                This is a basic toast notification message.
+            </div>
+        </div>
+        <div class="toast toast-primary" id="toastPrimary">
+            <div class="toast-header">
+                <strong>Primary</strong>
+                <small>just now</small>
+                <button class="toast-close" onclick="hideToast('toastPrimary')">&times;</button>
+            </div>
+            <div class="toast-body">
+                This is a primary toast notification.
+            </div>
+        </div>
+        <div class="toast toast-success" id="toastSuccess">
+            <div class="toast-header">
+                <strong>Success</strong>
+                <small>just now</small>
+                <button class="toast-close" onclick="hideToast('toastSuccess')">&times;</button>
+            </div>
+            <div class="toast-body">
+                Operation completed successfully!
+            </div>
+        </div>
+        <div class="toast toast-danger" id="toastDanger">
+            <div class="toast-header">
+                <strong>Error</strong>
+                <small>just now</small>
+                <button class="toast-close" onclick="hideToast('toastDanger')">&times;</button>
+            </div>
+            <div class="toast-body">
+                An error occurred!
+            </div>
+        </div>
+        <div class="toast toast-warning" id="toastWarning">
+            <div class="toast-header">
+                <strong>Warning</strong>
+                <small>just now</small>
+                <button class="toast-close" onclick="hideToast('toastWarning')">&times;</button>
+            </div>
+            <div class="toast-body">
+                Please be careful!
+            </div>
+        </div>
+        <div class="toast toast-info" id="toastInfo">
+            <div class="toast-header">
+                <strong>Info</strong>
+                <small>just now</small>
+                <button class="toast-close" onclick="hideToast('toastInfo')">&times;</button>
+            </div>
+            <div class="toast-body">
+                Here's some information for you.
+            </div>
+        </div>
+        <div class="toast" id="toastNoHeader">
+            <div class="toast-body">
+                Simple toast message without header.
+            </div>
+        </div>
+    </div>
+
     <div class="docs-container">
         <aside class="docs-sidebar">
             <h1 class="docs-nav-title">Tani</h1>
@@ -22,11 +91,21 @@
                 <li class="docs-nav-item"><a href="#installation" class="docs-nav-link">Installation</a></li>
                 <li class="docs-nav-item"><a href="#color-palette" class="docs-nav-link">Color Palette</a></li>
                 <li class="docs-nav-item"><a href="#buttons" class="docs-nav-link">Buttons</a></li>
+                <li class="docs-nav-item"><a href="#button-groups" class="docs-nav-link">Button Groups</a></li>
                 <li class="docs-nav-item"><a href="#badges" class="docs-nav-link">Badges</a></li>
                 <li class="docs-nav-item"><a href="#cards" class="docs-nav-link">Cards</a></li>
+                <li class="docs-nav-item"><a href="#breadcrumbs" class="docs-nav-link">Breadcrumbs</a></li>
                 <li class="docs-nav-item"><a href="#navbar" class="docs-nav-link">Navbar</a></li>
+                <li class="docs-nav-item"><a href="#navs-tabs" class="docs-nav-link">Navs & Tabs</a></li>
+                <li class="docs-nav-item"><a href="#dropdowns" class="docs-nav-link">Dropdowns</a></li>
                 <li class="docs-nav-item"><a href="#modals" class="docs-nav-link">Modals</a></li>
+                <li class="docs-nav-item"><a href="#toasts" class="docs-nav-link">Toasts</a></li>
+                <li class="docs-nav-item"><a href="#progress" class="docs-nav-link">Progress</a></li>
+                <li class="docs-nav-item"><a href="#spinners" class="docs-nav-link">Spinners</a></li>
                 <li class="docs-nav-item"><a href="#forms" class="docs-nav-link">Forms</a></li>
+                <li class="docs-nav-item"><a href="#pagination" class="docs-nav-link">Pagination</a></li>
+                <li class="docs-nav-item"><a href="#accordion" class="docs-nav-link">Accordion</a></li>
+                <li class="docs-nav-item"><a href="#carousel" class="docs-nav-link">Carousel</a></li>
                 <li class="docs-nav-item"><a href="#utilities" class="docs-nav-link">Utility Classes</a></li>
                 <li class="docs-nav-item"><a href="#typography" class="docs-nav-link">Typography</a></li>
             </ul>
@@ -35,9 +114,10 @@
         <main class="docs-main">
             <header class="docs-header">
                 <h1 class="docs-title">Tani</h1>
-                <p class="docs-subtitle">Official Documentation for the Tani CSS Framework - A lightweight, utility-first CSS framework with rich component library</p>
+                <p class="docs-subtitle">Official Documentation for the Tani CSS Framework - A lightweight,
+                    utility-first CSS framework with rich component library</p>
                 <div>
-                    <span class="docs-badge" style="background-color: #ffab58; color: white;">v1.0.0</span>
+                    <span class="docs-badge" style="background-color: #ffab58; color: white;">v1.10.0</span>
                     <span class="docs-badge" style="background-color: #28a745; color: white;">Stable</span>
                 </div>
             </header>
@@ -245,6 +325,224 @@
                 </div>
             </section>
 
+            <section id="button-groups" class="docs-section">
+                <h2 class="docs-section-title">Button Groups</h2>
+                <p>Group a series of buttons together on a single line or stack them vertically.</p>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Basic Button Group</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="btn-group">
+                                <button class="btn btn-primary">Left</button>
+                                <button class="btn btn-primary">Middle</button>
+                                <button class="btn btn-primary">Right</button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="btn-group"&gt;
+  &lt;button class="btn btn-primary"&gt;Left&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Middle&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Right&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Mixed Button Styles</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="btn-group">
+                                <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-warning">Edit</button>
+                                <button class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="btn-group"&gt;
+  &lt;button class="btn btn-danger"&gt;Delete&lt;/button&gt;
+  &lt;button class="btn btn-warning"&gt;Edit&lt;/button&gt;
+  &lt;button class="btn btn-success"&gt;Save&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Outline Button Groups</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="btn-group">
+                                <button class="btn btn-outline-primary">One</button>
+                                <button class="btn btn-outline-primary">Two</button>
+                                <button class="btn btn-outline-primary">Three</button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="btn-group"&gt;
+  &lt;button class="btn btn-outline-primary"&gt;One&lt;/button&gt;
+  &lt;button class="btn btn-outline-primary"&gt;Two&lt;/button&gt;
+  &lt;button class="btn btn-outline-primary"&gt;Three&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Button Group Sizes</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="btn-group btn-group-sm" style="margin-bottom: 10px;">
+                                <button class="btn btn-primary">Small</button>
+                                <button class="btn btn-primary">Small</button>
+                                <button class="btn btn-primary">Small</button>
+                            </div>
+                            <br>
+                            <div class="btn-group" style="margin-bottom: 10px;">
+                                <button class="btn btn-primary">Normal</button>
+                                <button class="btn btn-primary">Normal</button>
+                                <button class="btn btn-primary">Normal</button>
+                            </div>
+                            <br>
+                            <div class="btn-group btn-group-lg">
+                                <button class="btn btn-primary">Large</button>
+                                <button class="btn btn-primary">Large</button>
+                                <button class="btn btn-primary">Large</button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="btn-group btn-group-sm"&gt;
+  &lt;button class="btn btn-primary"&gt;Small&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Small&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Small&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="btn-group"&gt;
+  &lt;button class="btn btn-primary"&gt;Normal&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Normal&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Normal&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="btn-group btn-group-lg"&gt;
+  &lt;button class="btn btn-primary"&gt;Large&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Large&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Large&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Vertical Button Group</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="btn-group btn-group-vertical">
+                                <button class="btn btn-primary">Top</button>
+                                <button class="btn btn-primary">Middle</button>
+                                <button class="btn btn-primary">Bottom</button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="btn-group btn-group-vertical"&gt;
+  &lt;button class="btn btn-primary"&gt;Top&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Middle&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Bottom&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Button Toolbar</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <button class="btn btn-primary">1</button>
+                                    <button class="btn btn-primary">2</button>
+                                    <button class="btn btn-primary">3</button>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary">4</button>
+                                    <button class="btn btn-secondary">5</button>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-success">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="btn-toolbar"&gt;
+  &lt;div class="btn-group"&gt;
+    &lt;button class="btn btn-primary"&gt;1&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;2&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;3&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="btn-group"&gt;
+    &lt;button class="btn btn-secondary"&gt;4&lt;/button&gt;
+    &lt;button class="btn btn-secondary"&gt;5&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="btn-group"&gt;
+    &lt;button class="btn btn-success"&gt;6&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Button Group with Dropdown</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="btn-group">
+                                <button class="btn btn-primary">Action</button>
+                                <button class="btn btn-primary">Another</button>
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                        Dropdown
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="btn-group"&gt;
+  &lt;button class="btn btn-primary"&gt;Action&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Another&lt;/button&gt;
+  &lt;div class="dropdown"&gt;
+    &lt;button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"&gt;
+      Dropdown
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-note">
+                    <strong>Note:</strong> Button groups automatically handle border radius and spacing between buttons. Buttons in a group share borders for a seamless appearance.
+                </div>
+            </section>
+
             <section id="badges" class="docs-section">
                 <h2 class="docs-section-title">Badges</h2>
                 <p>Badges are small status indicators useful for highlighting information.</p>
@@ -434,6 +732,321 @@
 &lt;/div&gt;</code></pre>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section id="breadcrumbs" class="docs-section">
+                <h2 class="docs-section-title">Breadcrumbs</h2>
+                <p>Breadcrumbs indicate the current page's location within a navigational hierarchy.</p>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Basic Breadcrumb</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb"&gt;
+    &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb-item active" aria-current="page"&gt;Data&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Breadcrumb Separators</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Products</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Electronics</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-arrow">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Products</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Electronics</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-chevron">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Products</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Electronics</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-dot">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Products</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Electronics</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-dash">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Products</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Electronics</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Default (slash) --&gt;
+&lt;ol class="breadcrumb"&gt;...&lt;/ol&gt;
+
+&lt;!-- Arrow --&gt;
+&lt;ol class="breadcrumb breadcrumb-arrow"&gt;...&lt;/ol&gt;
+
+&lt;!-- Chevron --&gt;
+&lt;ol class="breadcrumb breadcrumb-chevron"&gt;...&lt;/ol&gt;
+
+&lt;!-- Dot --&gt;
+&lt;ol class="breadcrumb breadcrumb-dot"&gt;...&lt;/ol&gt;
+
+&lt;!-- Dash --&gt;
+&lt;ol class="breadcrumb breadcrumb-dash"&gt;...&lt;/ol&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Breadcrumb Styles</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-transparent">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-bordered">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-rounded">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Transparent --&gt;
+&lt;ol class="breadcrumb breadcrumb-transparent"&gt;...&lt;/ol&gt;
+
+&lt;!-- Bordered --&gt;
+&lt;ol class="breadcrumb breadcrumb-bordered"&gt;...&lt;/ol&gt;
+
+&lt;!-- Rounded --&gt;
+&lt;ol class="breadcrumb breadcrumb-rounded"&gt;...&lt;/ol&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Breadcrumb Colors</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-primary">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-secondary">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-success">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-dark">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Primary --&gt;
+&lt;ol class="breadcrumb breadcrumb-primary"&gt;...&lt;/ol&gt;
+
+&lt;!-- Secondary --&gt;
+&lt;ol class="breadcrumb breadcrumb-secondary"&gt;...&lt;/ol&gt;
+
+&lt;!-- Success --&gt;
+&lt;ol class="breadcrumb breadcrumb-success"&gt;...&lt;/ol&gt;
+
+&lt;!-- Dark --&gt;
+&lt;ol class="breadcrumb breadcrumb-dark"&gt;...&lt;/ol&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Breadcrumb Sizes</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-sm">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-lg">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Small --&gt;
+&lt;ol class="breadcrumb breadcrumb-sm"&gt;...&lt;/ol&gt;
+
+&lt;!-- Normal --&gt;
+&lt;ol class="breadcrumb"&gt;...&lt;/ol&gt;
+
+&lt;!-- Large --&gt;
+&lt;ol class="breadcrumb breadcrumb-lg"&gt;...&lt;/ol&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Breadcrumb with Icons</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="#">
+                                            <span class="breadcrumb-icon">🏠</span>
+                                            Home
+                                        </a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="#">
+                                            <span class="breadcrumb-icon">📚</span>
+                                            Library
+                                        </a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        <span class="breadcrumb-icon">📊</span>
+                                        Data
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb"&gt;
+    &lt;li class="breadcrumb-item"&gt;
+      &lt;a href="#"&gt;
+        &lt;span class="breadcrumb-icon"&gt;🏠&lt;/span&gt;
+        Home
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb-item"&gt;
+      &lt;a href="#"&gt;
+        &lt;span class="breadcrumb-icon"&gt;📚&lt;/span&gt;
+        Library
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb-item active" aria-current="page"&gt;
+      &lt;span class="breadcrumb-icon"&gt;📊&lt;/span&gt;
+      Data
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Combined Styles</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-primary breadcrumb-arrow breadcrumb-rounded">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Products</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Electronics</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb" style="margin-bottom: 15px;">
+                                <ol class="breadcrumb breadcrumb-dark breadcrumb-chevron breadcrumb-lg">
+                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Settings</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                                </ol>
+                            </nav>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-success breadcrumb-dot breadcrumb-bordered">
+                                    <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Users</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Primary + Arrow + Rounded --&gt;
+&lt;ol class="breadcrumb breadcrumb-primary breadcrumb-arrow breadcrumb-rounded"&gt;...&lt;/ol&gt;
+
+&lt;!-- Dark + Chevron + Large --&gt;
+&lt;ol class="breadcrumb breadcrumb-dark breadcrumb-chevron breadcrumb-lg"&gt;...&lt;/ol&gt;
+
+&lt;!-- Success + Dot + Bordered --&gt;
+&lt;ol class="breadcrumb breadcrumb-success breadcrumb-dot breadcrumb-bordered"&gt;...&lt;/ol&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-note">
+                    <strong>Note:</strong> Always use <code>aria-label="breadcrumb"</code> on the <code>&lt;nav&gt;</code> element and <code>aria-current="page"</code> on the active item for accessibility.
                 </div>
             </section>
 
@@ -708,6 +1321,573 @@ window.addEventListener('resize', function () {
                 </div>
             </section>
 
+            <section id="navs-tabs" class="docs-section">
+                <h2 class="docs-section-title">Navs & Tabs</h2>
+                <p>Navigation components for creating tabbed interfaces, pills, and other navigation patterns.</p>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Base Nav</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Active</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#">Disabled</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;ul class="nav"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link disabled" href="#"&gt;Disabled&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Tabs</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <ul class="nav nav-tabs" id="myTab">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#" data-tab="home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-tab="profile">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-tab="contact">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#">Disabled</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="home">
+                                    <p>This is the home tab content. Tabs are great for organizing content into separate views.</p>
+                                </div>
+                                <div class="tab-pane" id="profile">
+                                    <p>This is the profile tab content. Click on different tabs to see the content change.</p>
+                                </div>
+                                <div class="tab-pane" id="contact">
+                                    <p>This is the contact tab content. Each tab can contain any HTML content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;ul class="nav nav-tabs"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#" data-tab="home"&gt;Home&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#" data-tab="profile"&gt;Profile&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#" data-tab="contact"&gt;Contact&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tab-content"&gt;
+  &lt;div class="tab-pane active" id="home"&gt;
+    &lt;p&gt;Home tab content&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="tab-pane" id="profile"&gt;
+    &lt;p&gt;Profile tab content&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="tab-pane" id="contact"&gt;
+    &lt;p&gt;Contact tab content&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Pills</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <ul class="nav nav-pills" id="myPills">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#" data-tab="pill-home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-tab="pill-profile">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-tab="pill-contact">Contact</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="pill-home">
+                                    <p>Pills provide a more rounded, button-like appearance for navigation.</p>
+                                </div>
+                                <div class="tab-pane" id="pill-profile">
+                                    <p>Profile content in pills style.</p>
+                                </div>
+                                <div class="tab-pane" id="pill-contact">
+                                    <p>Contact content in pills style.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;ul class="nav nav-pills"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#" data-tab="pill-home"&gt;Home&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#" data-tab="pill-profile"&gt;Profile&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#" data-tab="pill-contact"&gt;Contact&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tab-content"&gt;
+  &lt;div class="tab-pane active" id="pill-home"&gt;
+    &lt;p&gt;Home content&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="tab-pane" id="pill-profile"&gt;
+    &lt;p&gt;Profile content&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="tab-pane" id="pill-contact"&gt;
+    &lt;p&gt;Contact content&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Fill and Justify</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <ul class="nav nav-pills nav-fill" style="margin-bottom: 20px;">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Active</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Much longer nav link</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-pills nav-justified">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Active</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Much longer nav link</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Fill: proportional width --&gt;
+&lt;ul class="nav nav-pills nav-fill"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Much longer nav link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Justified: equal width --&gt;
+&lt;ul class="nav nav-pills nav-justified"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Much longer nav link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Vertical Nav</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <ul class="nav nav-pills nav-vertical" style="max-width: 200px;">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Active</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#">Disabled</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;ul class="nav nav-pills nav-vertical"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link disabled" href="#"&gt;Disabled&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">JavaScript</h3>
+                    <p>Tabs require JavaScript to switch between content panes. Here's the complete code:</p>
+                    <div class="docs-component">
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-javascript">// Tab switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tabLinks = document.querySelectorAll('[data-tab]');
+    
+    tabLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('data-tab');
+            const targetPane = document.getElementById(targetId);
+            
+            if (!targetPane) return;
+            
+            // Remove active class from all tabs in this nav
+            const nav = this.closest('.nav');
+            nav.querySelectorAll('.nav-link').forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Hide all tab panes in the same tab-content container
+            const tabContent = targetPane.closest('.tab-content');
+            tabContent.querySelectorAll('.tab-pane').forEach(pane => {
+                pane.classList.remove('active', 'show');
+            });
+            
+            // Show target pane
+            targetPane.classList.add('active');
+            
+            // Add fade effect if using fade class
+            if (targetPane.classList.contains('fade')) {
+                setTimeout(() => {
+                    targetPane.classList.add('show');
+                }, 10);
+            }
+        });
+    });
+});</code></pre>
+                        </div>
+                    </div>
+                    <div class="docs-tip">
+                        <strong>Tip:</strong> Add the <code>fade</code> class to <code>.tab-pane</code> elements for smooth transitions between tabs.
+                    </div>
+                </div>
+            </section>
+
+            <section id="dropdowns" class="docs-section">
+                <h2 class="docs-section-title">Dropdowns</h2>
+                <p>Dropdowns are toggleable overlays for displaying lists of links, actions, and more. They work great as standalone components or within navigation bars.</p>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Basic Dropdown</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="dropdown" style="display: inline-block;">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    Dropdown Button
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"&gt;
+    Dropdown Button
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Dropdown with Divider</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="dropdown" style="display: inline-block;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    Menu Options
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Regular link</a></li>
+                                    <li><a class="dropdown-item" href="#">Another link</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"&gt;
+    Menu Options
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Regular link&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another link&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Dropdown Button Variants</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="dropdown" style="display: inline-block; margin-right: 10px;">
+                                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    Success
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown" style="display: inline-block; margin-right: 10px;">
+                                <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    Danger
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown" style="display: inline-block; margin-right: 10px;">
+                                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    Warning
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown" style="display: inline-block;">
+                                <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    Dark
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown"&gt;
+    Success
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;...&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown"&gt;
+    Danger
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;...&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Dropdown with Active and Disabled Items</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="dropdown" style="display: inline-block;">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    Dropdown States
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Regular item</a></li>
+                                    <li><a class="dropdown-item active" href="#">Active item</a></li>
+                                    <li><a class="dropdown-item disabled" href="#">Disabled item</a></li>
+                                    <li><a class="dropdown-item" href="#">Another item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"&gt;
+    Dropdown States
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Regular item&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item active" href="#"&gt;Active item&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item disabled" href="#"&gt;Disabled item&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another item&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Outline Button Dropdowns</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="dropdown" style="display: inline-block; margin-right: 10px;">
+                                <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    Primary
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown" style="display: inline-block; margin-right: 10px;">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    Secondary
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown" style="display: inline-block;">
+                                <button class="btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    Success
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown"&gt;
+    Primary
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;...&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Usage in Navigation</h3>
+                    <p>Dropdowns are commonly used within navigation bars. See the <a href="#navbar">Navbar section</a> for examples of dropdowns integrated into navigation menus.</p>
+                    <div class="docs-note">
+                        <strong>Note:</strong> When used in a navbar, dropdowns automatically adjust their positioning and behavior for mobile devices.
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">JavaScript</h3>
+                    <p>Dropdowns require JavaScript to function. The dropdown toggle functionality is already included in the navbar JavaScript code. Here's a standalone version:</p>
+                    <div class="docs-component">
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-javascript">// Dropdown toggle functionality
+const dropdownToggles = document.querySelectorAll('.dropdown-toggle, [data-toggle="dropdown"]');
+dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        const dropdown = this.closest('.dropdown');
+        const menu = dropdown ? dropdown.querySelector('.dropdown-menu') : null;
+        
+        if (menu) {
+            const isOpen = menu.classList.contains('show');
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown-menu.show').forEach(openMenu => {
+                if (openMenu !== menu) {
+                    openMenu.classList.remove('show');
+                }
+            });
+            
+            // Toggle current dropdown
+            menu.classList.toggle('show');
+            this.setAttribute('aria-expanded', !isOpen);
+        }
+    });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function (event) {
+    if (!event.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+            menu.classList.remove('show');
+        });
+    }
+});</code></pre>
+                        </div>
+                    </div>
+                    <div class="docs-tip">
+                        <strong>Tip:</strong> This JavaScript is already included in the page if you're using the navbar component. No need to add it twice!
+                    </div>
+                </div>
+            </section>
+
             <section id="modals" class="docs-section">
                 <h2 class="docs-section-title">Modals</h2>
                 <p>Modals are dialog boxes that overlay the main content to focus user attention on important
@@ -924,6 +2104,783 @@ document.addEventListener('click', function(event) {
                 </div>
             </section>
 
+            <section id="toasts" class="docs-section">
+                <h2 class="docs-section-title">Toasts</h2>
+                <p>Toasts are lightweight notifications designed to mimic push notifications.</p>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Basic Toast</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <button class="btn btn-primary" onclick="showToast('basicToast')">Show Toast</button>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="toast-container top-right"&gt;
+  &lt;div class="toast" id="basicToast"&gt;
+    &lt;div class="toast-header"&gt;
+      &lt;strong&gt;Notification&lt;/strong&gt;
+      &lt;small&gt;just now&lt;/small&gt;
+      &lt;button class="toast-close" onclick="hideToast('basicToast')"&gt;&times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="toast-body"&gt;
+      This is a basic toast notification message.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Toast Variants</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <button class="btn btn-primary" onclick="showToast('toastPrimary')" style="margin: 5px;">Primary</button>
+                            <button class="btn btn-success" onclick="showToast('toastSuccess')" style="margin: 5px;">Success</button>
+                            <button class="btn btn-danger" onclick="showToast('toastDanger')" style="margin: 5px;">Danger</button>
+                            <button class="btn btn-warning" onclick="showToast('toastWarning')" style="margin: 5px;">Warning</button>
+                            <button class="btn btn-info" onclick="showToast('toastInfo')" style="margin: 5px;">Info</button>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Primary Toast --&gt;
+&lt;div class="toast toast-primary"&gt;
+  &lt;div class="toast-header"&gt;
+    &lt;strong&gt;Primary&lt;/strong&gt;
+    &lt;small&gt;just now&lt;/small&gt;
+    &lt;button class="toast-close"&gt;&times;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="toast-body"&gt;
+    This is a primary toast notification.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Success Toast --&gt;
+&lt;div class="toast toast-success"&gt;
+  &lt;div class="toast-header"&gt;
+    &lt;strong&gt;Success&lt;/strong&gt;
+    &lt;small&gt;just now&lt;/small&gt;
+    &lt;button class="toast-close"&gt;&times;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="toast-body"&gt;
+    Operation completed successfully!
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Danger Toast --&gt;
+&lt;div class="toast toast-danger"&gt;
+  &lt;div class="toast-header"&gt;
+    &lt;strong&gt;Error&lt;/strong&gt;
+    &lt;small&gt;just now&lt;/small&gt;
+    &lt;button class="toast-close"&gt;&times;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="toast-body"&gt;
+    An error occurred!
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Toast Positions</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <button class="btn btn-secondary" onclick="showPositionToast('top-right')" style="margin: 5px;">Top Right</button>
+                            <button class="btn btn-secondary" onclick="showPositionToast('top-left')" style="margin: 5px;">Top Left</button>
+                            <button class="btn btn-secondary" onclick="showPositionToast('top-center')" style="margin: 5px;">Top Center</button>
+                            <button class="btn btn-secondary" onclick="showPositionToast('bottom-right')" style="margin: 5px;">Bottom Right</button>
+                            <button class="btn btn-secondary" onclick="showPositionToast('bottom-left')" style="margin: 5px;">Bottom Left</button>
+                            <button class="btn btn-secondary" onclick="showPositionToast('bottom-center')" style="margin: 5px;">Bottom Center</button>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Top Right --&gt;
+&lt;div class="toast-container top-right"&gt;
+  &lt;div class="toast"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Top Left --&gt;
+&lt;div class="toast-container top-left"&gt;
+  &lt;div class="toast"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Top Center --&gt;
+&lt;div class="toast-container top-center"&gt;
+  &lt;div class="toast"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Bottom Right --&gt;
+&lt;div class="toast-container bottom-right"&gt;
+  &lt;div class="toast"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Bottom Left --&gt;
+&lt;div class="toast-container bottom-left"&gt;
+  &lt;div class="toast"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Bottom Center --&gt;
+&lt;div class="toast-container bottom-center"&gt;
+  &lt;div class="toast"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Toast without Header</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <button class="btn btn-dark" onclick="showToast('toastNoHeader')">Show Simple Toast</button>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="toast"&gt;
+  &lt;div class="toast-body"&gt;
+    Simple toast message without header.
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">JavaScript</h3>
+                    <p>Toasts require JavaScript to show and hide. Here's the complete code:</p>
+                    <div class="docs-component">
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-javascript">// Toast functionality
+function showToast(toastId, duration = 5000) {
+    const toast = document.getElementById(toastId);
+    if (!toast) return;
+    
+    toast.classList.add('show');
+    toast.classList.remove('hiding');
+    
+    // Auto hide after duration
+    if (duration > 0) {
+        setTimeout(() => {
+            hideToast(toastId);
+        }, duration);
+    }
+}
+
+function hideToast(toastId) {
+    const toast = document.getElementById(toastId);
+    if (!toast) return;
+    
+    toast.classList.add('hiding');
+    toast.classList.remove('show');
+    
+    // Remove hiding class after animation
+    setTimeout(() => {
+        toast.classList.remove('hiding');
+    }, 300);
+}
+
+// Create toast dynamically
+function createToast(message, type = 'primary', position = 'top-right', duration = 5000) {
+    // Get or create container
+    let container = document.querySelector(`.toast-container.${position}`);
+    if (!container) {
+        container = document.createElement('div');
+        container.className = `toast-container ${position}`;
+        document.body.appendChild(container);
+    }
+    
+    // Create toast
+    const toastId = 'toast-' + Date.now();
+    const toast = document.createElement('div');
+    toast.id = toastId;
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `
+        &lt;div class="toast-header"&gt;
+            &lt;strong&gt;${type.charAt(0).toUpperCase() + type.slice(1)}&lt;/strong&gt;
+            &lt;small&gt;just now&lt;/small&gt;
+            &lt;button class="toast-close" onclick="hideToast('${toastId}')"&gt;&times;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="toast-body"&gt;${message}&lt;/div&gt;
+    `;
+    
+    container.appendChild(toast);
+    
+    // Show toast
+    setTimeout(() => showToast(toastId, duration), 10);
+    
+    // Remove from DOM after hiding
+    setTimeout(() => {
+        if (toast.parentNode) {
+            toast.parentNode.removeChild(toast);
+        }
+    }, duration + 500);
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="docs-tip">
+                        <strong>Tip:</strong> Use <code>createToast()</code> to dynamically generate toasts, or define them in HTML and show/hide with <code>showToast()</code> and <code>hideToast()</code>.
+                    </div>
+                </div>
+
+                <div class="docs-note">
+                    <strong>Note:</strong> Toasts automatically hide after 5 seconds by default. You can customize the duration or set it to 0 for manual dismissal only.
+                </div>
+            </section>
+
+            <section id="progress" class="docs-section">
+                <h2 class="docs-section-title">Progress</h2>
+                <p>Progress bars are used to visualize the completion status of tasks or processes.</p>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Basic Progress Bar</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 25%"></div>
+                            </div>
+                            <br>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 50%"></div>
+                            </div>
+                            <br>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                            <br>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 25%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 50%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 75%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 100%"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Progress Bar with Label</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 25%">25%</div>
+                            </div>
+                            <br>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 60%">60%</div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 25%"&gt;25%&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 60%"&gt;60%&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Colored Progress Bars</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar progress-bar-primary" style="width: 25%">Primary</div>
+                            </div>
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar progress-bar-secondary" style="width: 35%">Secondary</div>
+                            </div>
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar progress-bar-success" style="width: 50%">Success</div>
+                            </div>
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar progress-bar-danger" style="width: 65%">Danger</div>
+                            </div>
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar progress-bar-warning" style="width: 75%">Warning</div>
+                            </div>
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar progress-bar-info" style="width: 85%">Info</div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-dark" style="width: 95%">Dark</div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-primary" style="width: 25%"&gt;Primary&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-secondary" style="width: 35%"&gt;Secondary&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-success" style="width: 50%"&gt;Success&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-danger" style="width: 65%"&gt;Danger&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-warning" style="width: 75%"&gt;Warning&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-info" style="width: 85%"&gt;Info&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-dark" style="width: 95%"&gt;Dark&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Striped Progress Bars</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar progress-bar-striped" style="width: 40%"></div>
+                            </div>
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 60%"></div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-striped" style="width: 40%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-success progress-bar-striped" style="width: 60%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 80%"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Animated Progress Bars</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 45%"></div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success progress-bar-striped progress-bar-animated" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 45%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-success progress-bar-striped progress-bar-animated" style="width: 70%"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Progress Bar Sizes</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="progress progress-sm" style="margin-bottom: 10px;">
+                                <div class="progress-bar" style="width: 50%"></div>
+                            </div>
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar" style="width: 50%"></div>
+                            </div>
+                            <div class="progress progress-lg" style="margin-bottom: 10px;">
+                                <div class="progress-bar" style="width: 50%">50%</div>
+                            </div>
+                            <div class="progress progress-xl">
+                                <div class="progress-bar" style="width: 50%">50%</div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Small --&gt;
+&lt;div class="progress progress-sm"&gt;
+  &lt;div class="progress-bar" style="width: 50%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Normal --&gt;
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 50%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Large --&gt;
+&lt;div class="progress progress-lg"&gt;
+  &lt;div class="progress-bar" style="width: 50%"&gt;50%&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Extra Large --&gt;
+&lt;div class="progress progress-xl"&gt;
+  &lt;div class="progress-bar" style="width: 50%"&gt;50%&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Multiple Progress Bars</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-primary" style="width: 15%">15%</div>
+                                <div class="progress-bar progress-bar-success" style="width: 30%">30%</div>
+                                <div class="progress-bar progress-bar-info" style="width: 20%">20%</div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-primary" style="width: 15%"&gt;15%&lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-success" style="width: 30%"&gt;30%&lt;/div&gt;
+  &lt;div class="progress-bar progress-bar-info" style="width: 20%"&gt;20%&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-note">
+                    <strong>Note:</strong> Use the <code>style="width: X%"</code> attribute to set the progress value. You can dynamically update this with JavaScript to create animated progress indicators.
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Dynamic Progress Example</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="progress" style="margin-bottom: 10px;">
+                                <div class="progress-bar" id="dynamicProgress" style="width: 0%">0%</div>
+                            </div>
+                            <button class="btn btn-primary" onclick="startProgress()">Start Progress</button>
+                            <button class="btn btn-secondary" onclick="resetProgress()">Reset</button>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-javascript">function startProgress() {
+    const progressBar = document.getElementById('dynamicProgress');
+    let width = 0;
+    
+    const interval = setInterval(() => {
+        if (width >= 100) {
+            clearInterval(interval);
+        } else {
+            width++;
+            progressBar.style.width = width + '%';
+            progressBar.textContent = width + '%';
+        }
+    }, 20);
+}
+
+function resetProgress() {
+    const progressBar = document.getElementById('dynamicProgress');
+    progressBar.style.width = '0%';
+    progressBar.textContent = '0%';
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="spinners" class="docs-section">
+                <h2 class="docs-section-title">Spinners</h2>
+                <p>Spinners are loading indicators that show content is being loaded or processed.</p>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Border Spinner</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="spinner-border" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Growing Spinner</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="spinner-grow" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="spinner-grow" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Spinner Colors</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="spinner-border spinner-primary" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-border spinner-secondary" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-border spinner-success" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-border spinner-danger" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-border spinner-warning" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-border spinner-info" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-border spinner-dark" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="spinner-border spinner-primary" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-border spinner-secondary" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-border spinner-success" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-border spinner-danger" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-border spinner-warning" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-border spinner-info" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-border spinner-dark" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Growing Spinner Colors</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="spinner-grow spinner-primary" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-secondary" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-success" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-danger" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-warning" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-info" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-dark" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="spinner-grow spinner-primary" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-grow spinner-secondary" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-grow spinner-success" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Spinner Sizes</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="spinner-border spinner-border-sm spinner-primary" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-border spinner-primary" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-border spinner-border-lg spinner-primary" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-border spinner-border-xl spinner-primary" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Small --&gt;
+&lt;div class="spinner-border spinner-border-sm" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Normal --&gt;
+&lt;div class="spinner-border" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Large --&gt;
+&lt;div class="spinner-border spinner-border-lg" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Extra Large --&gt;
+&lt;div class="spinner-border spinner-border-xl" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Growing Spinner Sizes</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="spinner-grow spinner-grow-sm spinner-success" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-success" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-grow-lg spinner-success" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-grow-xl spinner-success" role="status" style="margin: 10px;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Small --&gt;
+&lt;div class="spinner-grow spinner-grow-sm" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Normal --&gt;
+&lt;div class="spinner-grow" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Large --&gt;
+&lt;div class="spinner-grow spinner-grow-lg" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Extra Large --&gt;
+&lt;div class="spinner-grow spinner-grow-xl" role="status"&gt;
+  &lt;span class="sr-only"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Spinners in Buttons</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <button class="btn btn-primary" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Loading...
+                            </button>
+                            <button class="btn btn-success" disabled style="margin-left: 10px;">
+                                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                Loading...
+                            </button>
+                            <button class="btn btn-secondary" disabled style="margin-left: 10px;">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;button class="btn btn-primary" disabled&gt;
+  &lt;span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"&gt;&lt;/span&gt;
+  Loading...
+&lt;/button&gt;
+
+&lt;button class="btn btn-success" disabled&gt;
+  &lt;span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"&gt;&lt;/span&gt;
+  Loading...
+&lt;/button&gt;
+
+&lt;button class="btn btn-secondary" disabled&gt;
+  &lt;span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"&gt;&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-note">
+                    <strong>Note:</strong> Always include <code>&lt;span class="sr-only"&gt;Loading...&lt;/span&gt;</code> for accessibility. This provides context for screen readers.
+                </div>
+            </section>
+
             <section id="forms" class="docs-section">
                 <h2 class="docs-section-title">Forms</h2>
                 <p>Tani provides a comprehensive set of form components for creating beautiful and functional forms.
@@ -1136,6 +3093,1286 @@ document.addEventListener('click', function(event) {
 &lt;input class="form-control form-control-sm" type="text" placeholder="Small input"&gt;</code></pre>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section id="pagination" class="docs-section">
+                <h2 class="docs-section-title">Pagination</h2>
+                <p>Pagination components for navigating through pages of content.</p>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Basic Pagination</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav>
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Previous</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;nav&gt;
+  &lt;ul class="pagination"&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;Previous&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;1&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item active"&gt;
+      &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;Next&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Pagination with Icons</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav>
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">«</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">4</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">5</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">»</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;nav&gt;
+  &lt;ul class="pagination"&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;«&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;1&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item active"&gt;
+      &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;4&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;5&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;»&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Disabled and Active States</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav>
+                                <ul class="pagination">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">Previous</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;nav&gt;
+  &lt;ul class="pagination"&gt;
+    &lt;li class="page-item disabled"&gt;
+      &lt;a class="page-link" href="#"&gt;Previous&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item active"&gt;
+      &lt;a class="page-link" href="#"&gt;1&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;Next&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Pagination Sizes</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav style="margin-bottom: 15px;">
+                                <ul class="pagination pagination-sm">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">«</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">»</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav style="margin-bottom: 15px;">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">«</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">»</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav>
+                                <ul class="pagination pagination-lg">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">«</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">»</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Small --&gt;
+&lt;nav&gt;
+  &lt;ul class="pagination pagination-sm"&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;«&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;1&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item active"&gt;
+      &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;»&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Normal --&gt;
+&lt;nav&gt;
+  &lt;ul class="pagination"&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Large --&gt;
+&lt;nav&gt;
+  &lt;ul class="pagination pagination-lg"&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Pagination Alignment</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav style="margin-bottom: 15px;">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Previous</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav style="margin-bottom: 15px;">
+                                <ul class="pagination pagination-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Previous</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav>
+                                <ul class="pagination pagination-end">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Previous</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Left aligned (default) --&gt;
+&lt;nav&gt;
+  &lt;ul class="pagination"&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Center aligned --&gt;
+&lt;nav&gt;
+  &lt;ul class="pagination pagination-center"&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Right aligned --&gt;
+&lt;nav&gt;
+  &lt;ul class="pagination pagination-end"&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Rounded Pagination</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <nav>
+                                <ul class="pagination pagination-rounded">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">«</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">4</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">5</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">»</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;nav&gt;
+  &lt;ul class="pagination pagination-rounded"&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;«&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;1&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item active"&gt;
+      &lt;a class="page-link" href="#"&gt;3&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;4&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;5&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;»&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-note">
+                    <strong>Note:</strong> Use the <code>active</code> class on <code>.page-item</code> to indicate the current page, and <code>disabled</code> class to disable navigation links.
+                </div>
+            </section>
+
+            <section id="accordion" class="docs-section">
+                <h2 class="docs-section-title">Accordion</h2>
+                <p>Accordions allow users to toggle the display of sections of content.</p>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Basic Accordion</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="accordion" id="accordionBasic">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-accordion="collapseOne">
+                                            Accordion Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse show">
+                                        <div class="accordion-body">
+                                            This is the first item's accordion body. It is shown by default.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="collapseTwo">
+                                            Accordion Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            This is the second item's accordion body. It is hidden by default.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="collapseThree">
+                                            Accordion Item #3
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            This is the third item's accordion body. It is hidden by default.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="accordion" id="accordionBasic"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button" type="button" data-accordion="collapseOne"&gt;
+        Accordion Item #1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseOne" class="accordion-collapse show"&gt;
+      &lt;div class="accordion-body"&gt;
+        This is the first item's accordion body.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-accordion="collapseTwo"&gt;
+        Accordion Item #2
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseTwo" class="accordion-collapse"&gt;
+      &lt;div class="accordion-body"&gt;
+        This is the second item's accordion body.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Flush Accordion</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="accordion accordion-flush" id="accordionFlush">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="flushOne">
+                                            Flush Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="flushOne" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Flush accordion removes borders and rounded corners.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="flushTwo">
+                                            Flush Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="flushTwo" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Perfect for sidebars or minimal designs.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="accordion accordion-flush"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-accordion="flushOne"&gt;
+        Flush Item #1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="flushOne" class="accordion-collapse"&gt;
+      &lt;div class="accordion-body"&gt;
+        Flush accordion removes borders and rounded corners.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Bordered Accordion</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="accordion accordion-bordered" id="accordionBordered">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="borderedOne">
+                                            Bordered Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="borderedOne" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Each item has its own border and spacing.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="borderedTwo">
+                                            Bordered Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="borderedTwo" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Great for card-like appearance.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="accordion accordion-bordered"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-accordion="borderedOne"&gt;
+        Bordered Item #1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="borderedOne" class="accordion-collapse"&gt;
+      &lt;div class="accordion-body"&gt;
+        Each item has its own border and spacing.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Accordion with Icons</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="accordion accordion-icon" id="accordionIcon">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="iconOne">
+                                            Icon Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="iconOne" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Accordion with plus/minus icon indicators.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="iconTwo">
+                                            Icon Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="iconTwo" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            The icon rotates when expanded.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="accordion accordion-icon"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-accordion="iconOne"&gt;
+        Icon Item #1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="iconOne" class="accordion-collapse"&gt;
+      &lt;div class="accordion-body"&gt;
+        Accordion with plus/minus icon indicators.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Colored Accordions</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="accordion accordion-primary" id="accordionPrimary" style="margin-bottom: 15px;">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="primaryOne">
+                                            Primary Accordion
+                                        </button>
+                                    </h2>
+                                    <div id="primaryOne" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Active header has primary color background.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion accordion-secondary" id="accordionSecondary" style="margin-bottom: 15px;">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="secondaryOne">
+                                            Secondary Accordion
+                                        </button>
+                                    </h2>
+                                    <div id="secondaryOne" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Active header has secondary color background.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion accordion-success" id="accordionSuccess" style="margin-bottom: 15px;">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="successOne">
+                                            Success Accordion
+                                        </button>
+                                    </h2>
+                                    <div id="successOne" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Active header has success color background.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion accordion-dark" id="accordionDark">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="darkOne">
+                                            Dark Accordion
+                                        </button>
+                                    </h2>
+                                    <div id="darkOne" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Active header has dark color background.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Primary --&gt;
+&lt;div class="accordion accordion-primary"&gt;...&lt;/div&gt;
+
+&lt;!-- Secondary --&gt;
+&lt;div class="accordion accordion-secondary"&gt;...&lt;/div&gt;
+
+&lt;!-- Success --&gt;
+&lt;div class="accordion accordion-success"&gt;...&lt;/div&gt;
+
+&lt;!-- Dark --&gt;
+&lt;div class="accordion accordion-dark"&gt;...&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Accordion with Shadow</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="accordion accordion-shadow" id="accordionShadow">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="shadowOne">
+                                            Shadow Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="shadowOne" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Accordion with elevated shadow effect.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="shadowTwo">
+                                            Shadow Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="shadowTwo" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Adds depth to the accordion.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="accordion accordion-shadow"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-accordion="shadowOne"&gt;
+        Shadow Item #1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="shadowOne" class="accordion-collapse"&gt;
+      &lt;div class="accordion-body"&gt;
+        Accordion with elevated shadow effect.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Combined Styles</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="accordion accordion-primary accordion-bordered accordion-shadow" id="accordionCombined">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="combinedOne">
+                                            Combined Styles
+                                        </button>
+                                    </h2>
+                                    <div id="combinedOne" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Primary + Bordered + Shadow combined together.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-accordion="combinedTwo">
+                                            Multiple Modifiers
+                                        </button>
+                                    </h2>
+                                    <div id="combinedTwo" class="accordion-collapse">
+                                        <div class="accordion-body">
+                                            Mix and match different styles for unique designs.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="accordion accordion-primary accordion-bordered accordion-shadow"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-accordion="combinedOne"&gt;
+        Combined Styles
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="combinedOne" class="accordion-collapse"&gt;
+      &lt;div class="accordion-body"&gt;
+        Primary + Bordered + Shadow combined together.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">JavaScript</h3>
+                    <p>Accordions require JavaScript to toggle content. Here's the complete code:</p>
+                    <div class="docs-component">
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-javascript">// Accordion functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionButtons = document.querySelectorAll('[data-accordion]');
+    
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-accordion');
+            const target = document.getElementById(targetId);
+            const accordion = this.closest('.accordion');
+            
+            if (!target) return;
+            
+            // Check if we should close others (default behavior)
+            const closeOthers = !accordion.hasAttribute('data-allow-multiple');
+            
+            if (closeOthers) {
+                // Close all other items in this accordion
+                accordion.querySelectorAll('.accordion-collapse.show').forEach(collapse => {
+                    if (collapse !== target) {
+                        collapse.classList.remove('show');
+                        const btn = accordion.querySelector(`[data-accordion="${collapse.id}"]`);
+                        if (btn) btn.classList.add('collapsed');
+                    }
+                });
+            }
+            
+            // Toggle current item
+            target.classList.toggle('show');
+            this.classList.toggle('collapsed');
+        });
+    });
+});</code></pre>
+                        </div>
+                    </div>
+                    <div class="docs-tip">
+                        <strong>Tip:</strong> Add <code>data-allow-multiple</code> attribute to the accordion container to allow multiple items to be open at once.
+                    </div>
+                </div>
+
+                <div class="docs-note">
+                    <strong>Note:</strong> By default, only one accordion item can be open at a time. The open item will automatically close when another is opened.
+                </div>
+            </section>
+
+            <section id="carousel" class="docs-section">
+                <h2 class="docs-section-title">Carousel</h2>
+                <p>Carousels are slideshow components for cycling through images or content.</p>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Basic Carousel</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="carousel" id="carouselBasic">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://via.placeholder.com/800x400/ffab58/ffffff?text=Slide+1" alt="Slide 1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/1780b4/ffffff?text=Slide+2" alt="Slide 2">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/28a745/ffffff?text=Slide+3" alt="Slide 3">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" onclick="prevSlide('carouselBasic')">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" onclick="nextSlide('carouselBasic')">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="carousel" id="carouselBasic"&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="image1.jpg" alt="Slide 1"&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="image2.jpg" alt="Slide 2"&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="image3.jpg" alt="Slide 3"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="carousel-control-prev" onclick="prevSlide('carouselBasic')"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" onclick="nextSlide('carouselBasic')"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Carousel with Indicators</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="carousel" id="carouselIndicators">
+                                <div class="carousel-indicators">
+                                    <button class="active" onclick="goToSlide('carouselIndicators', 0)"></button>
+                                    <button onclick="goToSlide('carouselIndicators', 1)"></button>
+                                    <button onclick="goToSlide('carouselIndicators', 2)"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://via.placeholder.com/800x400/dc3545/ffffff?text=Slide+1" alt="Slide 1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/ffc107/333333?text=Slide+2" alt="Slide 2">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/06b6d4/ffffff?text=Slide+3" alt="Slide 3">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" onclick="prevSlide('carouselIndicators')">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" onclick="nextSlide('carouselIndicators')">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="carousel" id="carouselIndicators"&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button class="active" onclick="goToSlide('carouselIndicators', 0)"&gt;&lt;/button&gt;
+    &lt;button onclick="goToSlide('carouselIndicators', 1)"&gt;&lt;/button&gt;
+    &lt;button onclick="goToSlide('carouselIndicators', 2)"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="image1.jpg" alt="Slide 1"&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="image2.jpg" alt="Slide 2"&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="image3.jpg" alt="Slide 3"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="carousel-control-prev" onclick="prevSlide('carouselIndicators')"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" onclick="nextSlide('carouselIndicators')"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Carousel with Captions</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="carousel" id="carouselCaptions">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Beautiful+Landscape" alt="Slide 1">
+                                        <div class="carousel-caption">
+                                            <h5>First Slide</h5>
+                                            <p>Beautiful landscape photography</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/ec4899/ffffff?text=City+View" alt="Slide 2">
+                                        <div class="carousel-caption">
+                                            <h5>Second Slide</h5>
+                                            <p>Amazing city skyline</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/f97316/ffffff?text=Nature" alt="Slide 3">
+                                        <div class="carousel-caption">
+                                            <h5>Third Slide</h5>
+                                            <p>Stunning nature scenes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" onclick="prevSlide('carouselCaptions')">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" onclick="nextSlide('carouselCaptions')">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="carousel" id="carouselCaptions"&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="image1.jpg" alt="Slide 1"&gt;
+      &lt;div class="carousel-caption"&gt;
+        &lt;h5&gt;First Slide&lt;/h5&gt;
+        &lt;p&gt;Beautiful landscape photography&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="carousel-control-prev" onclick="prevSlide('carouselCaptions')"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" onclick="nextSlide('carouselCaptions')"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Carousel with Fade Effect</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="carousel carousel-fade" id="carouselFade">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://via.placeholder.com/800x400/22c55e/ffffff?text=Fade+1" alt="Slide 1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/14b8a6/ffffff?text=Fade+2" alt="Slide 2">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/3b82f6/ffffff?text=Fade+3" alt="Slide 3">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" onclick="prevSlide('carouselFade')">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" onclick="nextSlide('carouselFade')">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="carousel carousel-fade" id="carouselFade"&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="image1.jpg" alt="Slide 1"&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="image2.jpg" alt="Slide 2"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="carousel-control-prev" onclick="prevSlide('carouselFade')"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" onclick="nextSlide('carouselFade')"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Carousel Styles</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="carousel carousel-bordered carousel-shadow" id="carouselStyled" style="margin-bottom: 15px;">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://via.placeholder.com/800x400/6366f1/ffffff?text=Bordered+%26+Shadow" alt="Slide 1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/a855f7/ffffff?text=Styled+Carousel" alt="Slide 2">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" onclick="prevSlide('carouselStyled')">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" onclick="nextSlide('carouselStyled')">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;!-- Bordered --&gt;
+&lt;div class="carousel carousel-bordered"&gt;...&lt;/div&gt;
+
+&lt;!-- Shadow --&gt;
+&lt;div class="carousel carousel-shadow"&gt;...&lt;/div&gt;
+
+&lt;!-- Combined --&gt;
+&lt;div class="carousel carousel-bordered carousel-shadow"&gt;...&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">Autoplay Carousel</h3>
+                    <div class="docs-component">
+                        <div class="docs-component-preview">
+                            <div class="carousel" id="carouselAutoplay" data-autoplay="true" data-interval="3000">
+                                <div class="carousel-autoplay-indicator">Auto</div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://via.placeholder.com/800x400/ef4444/ffffff?text=Auto+1" alt="Slide 1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/f59e0b/ffffff?text=Auto+2" alt="Slide 2">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://via.placeholder.com/800x400/10b981/ffffff?text=Auto+3" alt="Slide 3">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" onclick="prevSlide('carouselAutoplay')">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" onclick="nextSlide('carouselAutoplay')">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-html">&lt;div class="carousel" id="carouselAutoplay" data-autoplay="true" data-interval="3000"&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="image1.jpg" alt="Slide 1"&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="image2.jpg" alt="Slide 2"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="carousel-control-prev" onclick="prevSlide('carouselAutoplay')"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" onclick="nextSlide('carouselAutoplay')"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docs-subsection">
+                    <h3 class="docs-subsection-title">JavaScript</h3>
+                    <p>Carousels require JavaScript to function. Here's the complete code:</p>
+                    <div class="docs-component">
+                        <div class="docs-component-code">
+                            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                            <pre><code class="language-javascript">// Carousel functionality
+const carousels = {};
+
+function initCarousel(carouselId) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel || carousels[carouselId]) return;
+    
+    const items = carousel.querySelectorAll('.carousel-item');
+    const indicators = carousel.querySelectorAll('.carousel-indicators button');
+    
+    carousels[carouselId] = {
+        currentIndex: 0,
+        items: items,
+        indicators: indicators,
+        autoplayInterval: null
+    };
+    
+    // Setup autoplay if enabled
+    if (carousel.dataset.autoplay === 'true') {
+        const interval = parseInt(carousel.dataset.interval) || 5000;
+        startAutoplay(carouselId, interval);
+        
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => stopAutoplay(carouselId));
+        carousel.addEventListener('mouseleave', () => startAutoplay(carouselId, interval));
+    }
+}
+
+function goToSlide(carouselId, index) {
+    const data = carousels[carouselId];
+    if (!data) return;
+    
+    data.items[data.currentIndex].classList.remove('active');
+    if (data.indicators[data.currentIndex]) {
+        data.indicators[data.currentIndex].classList.remove('active');
+    }
+    
+    data.currentIndex = index;
+    data.items[data.currentIndex].classList.add('active');
+    if (data.indicators[data.currentIndex]) {
+        data.indicators[data.currentIndex].classList.add('active');
+    }
+}
+
+function nextSlide(carouselId) {
+    const data = carousels[carouselId];
+    if (!data) return;
+    
+    const nextIndex = (data.currentIndex + 1) % data.items.length;
+    goToSlide(carouselId, nextIndex);
+}
+
+function prevSlide(carouselId) {
+    const data = carousels[carouselId];
+    if (!data) return;
+    
+    const prevIndex = (data.currentIndex - 1 + data.items.length) % data.items.length;
+    goToSlide(carouselId, prevIndex);
+}
+
+function startAutoplay(carouselId, interval) {
+    const data = carousels[carouselId];
+    if (!data) return;
+    
+    stopAutoplay(carouselId);
+    data.autoplayInterval = setInterval(() => nextSlide(carouselId), interval);
+}
+
+function stopAutoplay(carouselId) {
+    const data = carousels[carouselId];
+    if (data && data.autoplayInterval) {
+        clearInterval(data.autoplayInterval);
+        data.autoplayInterval = null;
+    }
+}
+
+// Initialize all carousels on page load
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.carousel').forEach(carousel => {
+        initCarousel(carousel.id);
+    });
+});</code></pre>
+                        </div>
+                    </div>
+                    <div class="docs-tip">
+                        <strong>Tip:</strong> Add <code>data-autoplay="true"</code> and <code>data-interval="3000"</code> to enable autoplay with custom interval (in milliseconds).
+                    </div>
+                </div>
+
+                <div class="docs-note">
+                    <strong>Note:</strong> Carousels automatically pause autoplay when hovering over them and resume when the mouse leaves.
                 </div>
             </section>
 
@@ -1370,6 +4607,45 @@ document.addEventListener('click', function(event) {
     <script>
         // Simple navigation highlighting
         document.addEventListener('DOMContentLoaded', function () {
+            // Tab switching functionality
+            const tabLinks = document.querySelectorAll('[data-tab]');
+            
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('data-tab');
+                    const targetPane = document.getElementById(targetId);
+                    
+                    if (!targetPane) return;
+                    
+                    // Remove active class from all tabs in this nav
+                    const nav = this.closest('.nav');
+                    nav.querySelectorAll('.nav-link').forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Hide all tab panes in the same tab-content container
+                    const tabContent = targetPane.closest('.tab-content');
+                    tabContent.querySelectorAll('.tab-pane').forEach(pane => {
+                        pane.classList.remove('active', 'show');
+                    });
+                    
+                    // Show target pane
+                    targetPane.classList.add('active');
+                    
+                    // Add fade effect if using fade class
+                    if (targetPane.classList.contains('fade')) {
+                        setTimeout(() => {
+                            targetPane.classList.add('show');
+                        }, 10);
+                    }
+                });
+            });
+
             const navLinks = document.querySelectorAll('.docs-nav-link');
             const sections = document.querySelectorAll('.docs-section');
 
@@ -1541,6 +4817,246 @@ document.addEventListener('click', function(event) {
                 console.error('Failed to copy: ', err);
             });
         }
+
+        // Progress bar demo functions
+        function startProgress() {
+            const progressBar = document.getElementById('dynamicProgress');
+            let width = 0;
+            
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                    progressBar.textContent = width + '%';
+                }
+            }, 20);
+        }
+
+        function resetProgress() {
+            const progressBar = document.getElementById('dynamicProgress');
+            progressBar.style.width = '0%';
+            progressBar.textContent = '0%';
+        }
+
+        // Accordion functionality
+        const accordionButtons = document.querySelectorAll('[data-accordion]');
+        
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-accordion');
+                const target = document.getElementById(targetId);
+                const accordion = this.closest('.accordion');
+                
+                if (!target) return;
+                
+                // Check if we should close others (default behavior)
+                const closeOthers = !accordion.hasAttribute('data-allow-multiple');
+                
+                if (closeOthers) {
+                    // Close all other items in this accordion
+                    accordion.querySelectorAll('.accordion-collapse.show').forEach(collapse => {
+                        if (collapse !== target) {
+                            collapse.classList.remove('show');
+                            const btn = accordion.querySelector(`[data-accordion="${collapse.id}"]`);
+                            if (btn) btn.classList.add('collapsed');
+                        }
+                    });
+                }
+                
+                // Toggle current item
+                target.classList.toggle('show');
+                this.classList.toggle('collapsed');
+            });
+        });
+
+        // Toast functionality
+        function showToast(toastId, duration = 5000) {
+            const toast = document.getElementById(toastId);
+            if (!toast) return;
+            
+            toast.classList.add('show');
+            toast.classList.remove('hiding');
+            
+            // Auto hide after duration
+            if (duration > 0) {
+                setTimeout(() => {
+                    hideToast(toastId);
+                }, duration);
+            }
+        }
+
+        function hideToast(toastId) {
+            const toast = document.getElementById(toastId);
+            if (!toast) return;
+            
+            toast.classList.add('hiding');
+            toast.classList.remove('show');
+            
+            // Remove hiding class after animation
+            setTimeout(() => {
+                toast.classList.remove('hiding');
+            }, 300);
+        }
+
+        // Create toast dynamically
+        function createToast(message, type = 'primary', position = 'top-right', duration = 5000) {
+            // Get or create container
+            let container = document.querySelector(`.toast-container.${position}`);
+            if (!container) {
+                container = document.createElement('div');
+                container.className = `toast-container ${position}`;
+                document.body.appendChild(container);
+            }
+            
+            // Create toast
+            const toastId = 'toast-' + Date.now();
+            const toast = document.createElement('div');
+            toast.id = toastId;
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `
+                <div class="toast-header">
+                    <strong>${type.charAt(0).toUpperCase() + type.slice(1)}</strong>
+                    <small>just now</small>
+                    <button class="toast-close" onclick="hideToast('${toastId}')">&times;</button>
+                </div>
+                <div class="toast-body">${message}</div>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Show toast
+            setTimeout(() => showToast(toastId, duration), 10);
+            
+            // Remove from DOM after hiding
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            }, duration + 500);
+        }
+
+        // Show position toast demo
+        function showPositionToast(position) {
+            createToast(`Toast positioned at ${position.replace('-', ' ')}`, 'secondary', position, 3000);
+        }
+
+        // Carousel functionality
+        const carousels = new Map();
+
+        function initCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+
+            const items = carousel.querySelectorAll('.carousel-item');
+            const indicators = carousel.querySelectorAll('.carousel-indicators button');
+            const thumbnails = carousel.querySelectorAll('.carousel-thumbnail');
+            
+            carousels.set(carouselId, {
+                element: carousel,
+                items: items,
+                indicators: indicators,
+                thumbnails: thumbnails,
+                currentIndex: 0,
+                autoplayInterval: null
+            });
+
+            // Set first item as active
+            if (items.length > 0) {
+                items[0].classList.add('active');
+                if (indicators.length > 0) indicators[0].classList.add('active');
+                if (thumbnails.length > 0) thumbnails[0].classList.add('active');
+            }
+
+            // Setup indicator click handlers
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => goToSlide(carouselId, index));
+            });
+
+            // Setup thumbnail click handlers
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.addEventListener('click', () => goToSlide(carouselId, index));
+            });
+
+            // Check if autoplay is enabled
+            if (carousel.hasAttribute('data-autoplay')) {
+                const interval = parseInt(carousel.getAttribute('data-interval')) || 3000;
+                startAutoplay(carouselId, interval);
+            }
+        }
+
+        function goToSlide(carouselId, index) {
+            const carouselData = carousels.get(carouselId);
+            if (!carouselData) return;
+
+            const { items, indicators, thumbnails } = carouselData;
+            
+            // Remove active class from all
+            items.forEach(item => item.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            thumbnails.forEach(thumbnail => thumbnail.classList.remove('active'));
+            
+            // Add active class to target
+            if (items[index]) items[index].classList.add('active');
+            if (indicators[index]) indicators[index].classList.add('active');
+            if (thumbnails[index]) thumbnails[index].classList.add('active');
+            
+            carouselData.currentIndex = index;
+        }
+
+        function nextSlide(carouselId) {
+            const carouselData = carousels.get(carouselId);
+            if (!carouselData) return;
+
+            const nextIndex = (carouselData.currentIndex + 1) % carouselData.items.length;
+            goToSlide(carouselId, nextIndex);
+        }
+
+        function prevSlide(carouselId) {
+            const carouselData = carousels.get(carouselId);
+            if (!carouselData) return;
+
+            const prevIndex = (carouselData.currentIndex - 1 + carouselData.items.length) % carouselData.items.length;
+            goToSlide(carouselId, prevIndex);
+        }
+
+        function startAutoplay(carouselId, interval = 3000) {
+            const carouselData = carousels.get(carouselId);
+            if (!carouselData) return;
+
+            // Clear existing interval if any
+            if (carouselData.autoplayInterval) {
+                clearInterval(carouselData.autoplayInterval);
+            }
+
+            carouselData.autoplayInterval = setInterval(() => {
+                nextSlide(carouselId);
+            }, interval);
+
+            // Pause on hover
+            carouselData.element.addEventListener('mouseenter', () => stopAutoplay(carouselId));
+            carouselData.element.addEventListener('mouseleave', () => startAutoplay(carouselId, interval));
+        }
+
+        function stopAutoplay(carouselId) {
+            const carouselData = carousels.get(carouselId);
+            if (!carouselData) return;
+
+            if (carouselData.autoplayInterval) {
+                clearInterval(carouselData.autoplayInterval);
+                carouselData.autoplayInterval = null;
+            }
+        }
+
+        // Initialize all carousels on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.carousel').forEach(carousel => {
+                if (carousel.id) {
+                    initCarousel(carousel.id);
+                }
+            });
+        });
     </script>
 </body>
 
